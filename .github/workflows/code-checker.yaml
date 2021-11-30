@@ -1,9 +1,6 @@
 name: Code Checker
 
-on:
-  workflow_dispatch:
-  push:
-  pull_request:
+on: [ push , pull_request]
 
 jobs: 
   ubuntu:
