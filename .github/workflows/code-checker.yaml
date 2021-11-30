@@ -1,0 +1,22 @@
+name: Code Checker
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs: 
+  ubuntu:
+    name: Code Checker AMD64 Ubuntu ${{ matrix.ubuntu }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        ubuntu: [18.04]
+    env:
+      UBUNTU: ${{ matrix.ubuntu }}
+    steps:
+      - name: Code Check
+        run: |
+          exit 1
